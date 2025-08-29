@@ -8,6 +8,7 @@ import { IoSend } from "react-icons/io5";
 
 const InputModal = () => {
   const [question, setQuestion] = useState("");
+
   const dispatch = useDispatch();
   const handleInput = (e) => {
     setQuestion(e.target.value);
@@ -33,7 +34,7 @@ const InputModal = () => {
     try {
       dispatch(setLoading(true));
       let response = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyARUpQgldlMccZJp-okF-XBQWtVURZuULQ",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.NEXT_PUBLIC_API_KEY}`,
         {
           method: "POST",
           body: JSON.stringify(payload),
