@@ -12,7 +12,6 @@ const InputModal = () => {
   const dispatch = useDispatch();
   const handleInput = (e) => {
     setQuestion(e.target.value);
-    console.log(question);
   };
   const loading = useSelector((state) => state.outputs.loading);
   const [btnLoading, setBtnLoading] = useState(true);
